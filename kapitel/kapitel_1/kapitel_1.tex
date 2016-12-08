@@ -10,11 +10,11 @@ Kommentierungen oder Verstöße gegen Coding-Standards erschweren dagegen den Du
 Doch was verstehen wir eigentlich unter der Qualität von Software? Das bei Hewlett-Packard entwickelte FURPS ~\footcite[Vgl. S. 159]{Grady.1987} ist ein Beispiel für ein Softwarequalitätsmodell, 
 das verschiedene Aspekte von Softwarequalität berücksichtigt. Die Buchstaben des Akronyms stehen für 
 \begin{itemize}
-	\item Functionality (Funktionalität)
-	\item Usability (Gebrauchstauglichkeit)
-	\item Reliability (Zuverlässigkeit)
-	\item Performance (Effizienz)
-	\item Supportability (Wartbarkeit)
+    \item Functionality (Funktionalität)
+    \item Usability (Gebrauchstauglichkeit)
+    \item Reliability (Zuverlässigkeit)
+    \item Performance (Effizienz)
+    \item Supportability (Wartbarkeit)
 \end{itemize}
 
 In der Einleitung von Software-Qualität: Testen, Analysieren und Verifizieren von Software beschreibt der Autor, dass Softwarequalität facettenreich ist:
@@ -34,7 +34,7 @@ Mangelnde oder sogar gänzlich fehlende interne Qualität wird erst auf längere
 
 Oftmals wird eine solche Refaktorierung des Codes allerdings nicht (regelmäßig) durchgeführt, weil Auftraggeber oder Management den Entwicklern nicht die notwendigen Spielräume einräumen.
 
-	Automatisierte Entwicklertests auf Modulebene sogenannte Unit-Tests, ermöglichen die unmittelbare Überprüfung, ob durch eine Änderung neue Fehler eingeführt oder bestehende Funktionalitäten unbewusst verändert wurden. Ohne diese Tests ist die Refaktorierung von Quellcode nur unter hohen Risiken möglich oder extrem hohen manuellen Testaufwänden.
+    Automatisierte Entwicklertests auf Modulebene sogenannte Unit-Tests, ermöglichen die unmittelbare Überprüfung, ob durch eine Änderung neue Fehler eingeführt oder bestehende Funktionalitäten unbewusst verändert wurden. Ohne diese Tests ist die Refaktorierung von Quellcode nur unter hohen Risiken möglich oder extrem hohen manuellen Testaufwänden.
 
 Ein Ziel der Qualitätssicherung, oder genauer genommen des Projektmanagements/Qualitätsmanagements, muss daher sein, für alle am Projekt beteiligten Parteien die Kosten und den Nutzen von interner Qualität transparent und bewusst zu machen. Gelingt es, die Kosten zu quantifizieren, die durch schlechte interne Qualität langfristig entstehen, kann man darauf basierend im Rückschluss die Kostenersparnis aufzeigen, die Code von hoher interner Qualität ermöglichen würde. Das ist eine wichtige Voraussetzung dafür, das ein offizielles Budget zur Verwendung von Code-Refaktorierung berücksichtigt wird.
 
@@ -42,15 +42,15 @@ Ein Ziel der Qualitätssicherung, oder genauer genommen des Projektmanagements/Q
 Der Kunde beziehungsweise der Benutzer einer Anwendung interessiert sich für diejenigen Qualitätsaspekte, die für ihn greifbar sind. Diese machen die sogenannte externe Qualität
 der Anwendung aus und umfassen unter anderem:~\footcite[Vgl. Seite 5]{Bergmann.2013}
 \begin{itemize}
-	\item \textbf{Funktionalität} bezeichnet die Fähigkeit der Anwendung, die an sie gestellten Aufgaben den Anforderungen entsprechend zu erfüllen.
-	
-	\item \textbf{Gebrauchstauglichkeit} meint, dass ein Nutzer eine Anwendung effizient, effektiv und zufriedenstellend nutzen kann. Hierzu gehört auch die Barrierefreiheit.
+    \item \textbf{Funktionalität} bezeichnet die Fähigkeit der Anwendung, die an sie gestellten Aufgaben den Anforderungen entsprechend zu erfüllen.
+    
+    \item \textbf{Gebrauchstauglichkeit} meint, dass ein Nutzer eine Anwendung effizient, effektiv und zufriedenstellend nutzen kann. Hierzu gehört auch die Barrierefreiheit.
 
-	\item \textbf{Reaktionsfreudigkeit} bedeutet, dass die Antwortzeiten einer Anwendung auch unter Last die Benutzer zufrieden stellen. 
+    \item \textbf{Reaktionsfreudigkeit} bedeutet, dass die Antwortzeiten einer Anwendung auch unter Last die Benutzer zufrieden stellen. 
 
-	\item \textbf{Sicherheit}, gerade auch die gefühlte Sicherheit der Benutzer, ist ein weiterer wichtiger Faktor für den Erfolg einer Anwendung.
+    \item \textbf{Sicherheit}, gerade auch die gefühlte Sicherheit der Benutzer, ist ein weiterer wichtiger Faktor für den Erfolg einer Anwendung.
 
-	\item \textbf{Verfügbarkeit} und \textbf{Zuverlässigkeit} sind im Umfeld von Web-Plattformen mit hohem Nutzeraufkommen wichtige Themen. Die Anwendung muss auch unter großer Last funktionstüchtig sein und selbst in ungewöhnlichen Situationen sinnvoll funktionieren.
+    \item \textbf{Verfügbarkeit} und \textbf{Zuverlässigkeit} sind im Umfeld von Web-Plattformen mit hohem Nutzeraufkommen wichtige Themen. Die Anwendung muss auch unter großer Last funktionstüchtig sein und selbst in ungewöhnlichen Situationen sinnvoll funktionieren.
 \end{itemize}
 
 Alle Aspekte der externen Qualität haben einen Punkt gemeinsam, sie lassen sich durch End-to-End-Tests, also Tests, die eine gesamte Anwendung testen, überprüfen und validieren.
@@ -102,11 +102,11 @@ Dies zeigt eindeutig das es aus rein betriebswirtschaftlichen Gründen absolut w
 mit Dauer des Projektes exponentiell steigt. In der Abbildung \ref{relative_kosten_von_fehlerbehebungen} ist die Kostenstruktur noch einmal visualisiert.
 
 \begin{figure}[H]
-	\begin{center}
-		\includegraphics[width=0.9\textwidth]{relative_kosten_von_fehlerbehebungen}
-		\caption{Relative Kosten von Fehlerbehebungen}
-		\label{relative_kosten_von_fehlerbehebungen}
-	\end{center}
+    \begin{center}
+        \includegraphics[width=0.9\textwidth]{relative_kosten_von_fehlerbehebungen}
+        \caption{Relative Kosten von Fehlerbehebungen}
+        \label{relative_kosten_von_fehlerbehebungen}
+    \end{center}
 \end{figure}
 
 
@@ -130,15 +130,15 @@ Programmierung. Sie gehört zu den technisch geprägten Praktiken, die als Besta
 Software-Entwicklungsprozesse zur konstruktiven Qualitätssicherung beitragen.
 Der Testcode wird hierbei vor dem getesteten Code, dem sogenannten Produktionscode,
 geschrieben. Die hierauf aufbauende testgetriebene Entwicklung (englisch: Test-Driven
-Development) führt im Idealfall dazu, dass . . .
+Development) führt im Idealfall dazu, dass ...
 \begin{itemize}
-	\item es keinen Produktionscode gibt, der nicht durch einen Test motiviert ist. Dies reduziert das Risiko, Produktionscode zu schreiben, der nicht benötigt wird.
+    \item es keinen Produktionscode gibt, der nicht durch einen Test motiviert ist. Dies reduziert das Risiko, Produktionscode zu schreiben, der nicht benötigt wird.
 
-	\item  es keinen Produktionscode gibt, der nicht durch mindestens einen Test abgedeckt (Code-Coverage) ist, und damit Änderungen am Produktionscode nicht zu unbemerkten Seiteneffekten führen können.
+    \item  es keinen Produktionscode gibt, der nicht durch mindestens einen Test abgedeckt (Code-Coverage) ist, und damit Änderungen am Produktionscode nicht zu unbemerkten Seiteneffekten führen können.
 
-	\item testbarer Produktionscode, und damit sauberer Code (siehe nächster Abschnitt), geschrieben wird.
+    \item testbarer Produktionscode, und damit sauberer Code (siehe nächster Abschnitt), geschrieben wird.
 
-	\item die „Schmerzen“, die bestehender schlechter Code verursacht, verstärkt werden, da dieser nicht oder nur mit unverhältnismäßig hohem Aufwand getestet werden kann. Dies motiviert dazu, bestehenden schlechten Code durch Refaktorierung konsequent zu verbessern.
+    \item die „Schmerzen“, die bestehender schlechter Code verursacht, verstärkt werden, da dieser nicht oder nur mit unverhältnismäßig hohem Aufwand getestet werden kann. Dies motiviert dazu, bestehenden schlechten Code durch Refaktorierung konsequent zu verbessern.
 \end{itemize}
 
 Studien wie z.B. \dq{}Software Architecture Improvement through Test-Driven Development\dq{} zeigen, dass die testgetriebene 
@@ -209,47 +209,47 @@ die man sich als Mensch ansehen sollte, um jeweils selbst zu beurteilen, ob und 
 Im Folgenden betrachten wir einige Software-Metriken, die für die Testbarkeit besonders relevant sind.
 
 \begin{itemize} %todo rewrite
-	\item \textbf{Zyklomatische Komplexität und NPath-Komplexität}
-	Die zyklomatische Komplexität (englisch: Cyclomatic Complexity) ist die Anzahl der möglichen Entscheidungspfade 
-	innerhalb eines Programms beziehungsweise innerhalb einer Programmeinheit, normalerweise einer Methode oder Klasse. ~\footcite[Vgl. Seite 1-3]{McCabe.1976}
-	Sie wird durch Zählen der Kontrollstrukturen und booleschen Operatoren innerhalb der Programmeinheit 
-	berechnet und sagt etwas über die strukturelle Schwierigkeit einer Programmeinheit aus. McCabe geht davon aus, 
-	dass die einfache Abfolge von sequenziellen Befehlen einfacher zu verstehen ist als eine Verzweigung im Programmfluss.
+    \item \textbf{Zyklomatische Komplexität und NPath-Komplexität}
+    Die zyklomatische Komplexität (englisch: Cyclomatic Complexity) ist die Anzahl der möglichen Entscheidungspfade 
+    innerhalb eines Programms beziehungsweise innerhalb einer Programmeinheit, normalerweise einer Methode oder Klasse. ~\footcite[Vgl. Seite 1-3]{McCabe.1976}
+    Sie wird durch Zählen der Kontrollstrukturen und booleschen Operatoren innerhalb der Programmeinheit 
+    berechnet und sagt etwas über die strukturelle Schwierigkeit einer Programmeinheit aus. McCabe geht davon aus, 
+    dass die einfache Abfolge von sequenziellen Befehlen einfacher zu verstehen ist als eine Verzweigung im Programmfluss.
 
-	Eine hohe zyklomatische Komplexität ist ein Indikator dafür, dass eine Programmeinheit
-	anfällig für Fehler und schwer zu testen ist. Je mehr Ausführungspfade eine Programmeinheit hat, 
-	desto mehr Tests werden benötigt. Die NPath-Komplexität ~\footcite[Vgl. Seite 188-200]{Nejmeh.1988} zählt die azyklischen Ausführungspfade. 
-	Um die Anzahl der Ausführungspfade endlich zu halten und redundante Informationen auszuschließen, berücksichtigt die NPath-Komplexität
-	nicht jeden möglichen Schleifendurchlauf.
-	
-	\item \textbf{Change Risk Anti-Patterns (CRAP) Index}
-	Der Change Risk Anti-Patterns (CRAP) Index, ursprünglich als Change Risk Analysis and Predictions Index bekannt, 
-	sagt nicht direkt etwas über die Testbarkeit aus. Er soll an dieser Stelle aber nicht unerwähnt bleiben, da er sich 
-	neben der Cyclomatic Complexity auch aus der durch die Tests erreichten Code-Coverage berechnet.
-	
-	Code, der nicht zu komplex ist und über eine ausreichende Testabdeckung verfügt, weist
-	einen niedrigen CRAP-Wert auf. Das Risiko, dass Änderungen an diesem Code zu unerwarteten 
-	Seiteneffekten führen, ist geringer als bei Code, der einen hohen CRAP-Wert aufweist.
-	Letzteres ist für komplexen Code mit wenigen oder sogar gar keinen Tests der Fall.
-	
-	Der CRAP-Wert kann entweder durch das Schreiben von Tests oder durch eine geeignete Refaktorierung 
-	gesenkt werden. Beispielsweise helfen die Refaktorierungen Methode extrahieren und Bedingten Ausdruck 
-	durch Polymorphismus ersetzen dabei, eine Methode zu verkürzen und die Anzahl der möglichen 
-	Entscheidungspfade – und damit die zyklomatische Komplexität – zu verringern.
-	
-	\item \textbf{Kohäsion und Kopplung}
-	
-	Ein System mit starker Kohäsion besteht aus Komponenten, die nur für genau eine spezifizierte Aufgabe 
-	zuständig sind. Eine lose Kopplung ist dann erreicht, wenn Klassen voneinander weitgehend unabhängig 
-	sind und nur durch wohldefinierte Schnittstellen miteinander kommunizieren [Yourdon 1979].
-	
-	Das Gesetz von Demeter ~\footcite[Vgl. Seite 67-78]{Lieberherr.1989}verlangt, dass eine Methode eines Objekts nur Methoden desselben 
-	Objekts sowie von an die Methode per Parameter übergebenen und 	in der Methode erzeugten Objekten aufrufen darf. 
-	Die Einhaltung dieses Gesetzes führt zu loser Kopplung. Für die Testbarkeit ist es wichtig, auf das Erzeugen von Objekten im
-	Rumpf einer Methode zu verzichten, um so alle ihre Abhängigkeiten gegen Stub- oder
-	Mock-Objekte austauschen zu können. Es gibt empirische Belege, dass Verstöße gegen
-	das Gesetz von Demeter Indikatoren für die erhöhte Fehleranfälligkeit einer Software sind.[Guo 2011]
-	
+    Eine hohe zyklomatische Komplexität ist ein Indikator dafür, dass eine Programmeinheit
+    anfällig für Fehler und schwer zu testen ist. Je mehr Ausführungspfade eine Programmeinheit hat, 
+    desto mehr Tests werden benötigt. Die NPath-Komplexität ~\footcite[Vgl. Seite 188-200]{Nejmeh.1988} zählt die azyklischen Ausführungspfade. 
+    Um die Anzahl der Ausführungspfade endlich zu halten und redundante Informationen auszuschließen, berücksichtigt die NPath-Komplexität
+    nicht jeden möglichen Schleifendurchlauf.
+    
+    \item \textbf{Change Risk Anti-Patterns (CRAP) Index}
+    Der Change Risk Anti-Patterns (CRAP) Index, ursprünglich als Change Risk Analysis and Predictions Index bekannt, 
+    sagt nicht direkt etwas über die Testbarkeit aus. Er soll an dieser Stelle aber nicht unerwähnt bleiben, da er sich 
+    neben der Cyclomatic Complexity auch aus der durch die Tests erreichten Code-Coverage berechnet.
+    
+    Code, der nicht zu komplex ist und über eine ausreichende Testabdeckung verfügt, weist
+    einen niedrigen CRAP-Wert auf. Das Risiko, dass Änderungen an diesem Code zu unerwarteten 
+    Seiteneffekten führen, ist geringer als bei Code, der einen hohen CRAP-Wert aufweist.
+    Letzteres ist für komplexen Code mit wenigen oder sogar gar keinen Tests der Fall.
+    
+    Der CRAP-Wert kann entweder durch das Schreiben von Tests oder durch eine geeignete Refaktorierung 
+    gesenkt werden. Beispielsweise helfen die Refaktorierungen Methode extrahieren und Bedingten Ausdruck 
+    durch Polymorphismus ersetzen dabei, eine Methode zu verkürzen und die Anzahl der möglichen 
+    Entscheidungspfade – und damit die zyklomatische Komplexität – zu verringern.
+    
+    \item \textbf{Kohäsion und Kopplung}
+    
+    Ein System mit starker Kohäsion besteht aus Komponenten, die nur für genau eine spezifizierte Aufgabe 
+    zuständig sind. Eine lose Kopplung ist dann erreicht, wenn Klassen voneinander weitgehend unabhängig 
+    sind und nur durch wohldefinierte Schnittstellen miteinander kommunizieren [Yourdon 1979].
+    
+    Das Gesetz von Demeter ~\footcite[Vgl. Seite 67-78]{Lieberherr.1989}verlangt, dass eine Methode eines Objekts nur Methoden desselben 
+    Objekts sowie von an die Methode per Parameter übergebenen und     in der Methode erzeugten Objekten aufrufen darf. 
+    Die Einhaltung dieses Gesetzes führt zu loser Kopplung. Für die Testbarkeit ist es wichtig, auf das Erzeugen von Objekten im
+    Rumpf einer Methode zu verzichten, um so alle ihre Abhängigkeiten gegen Stub- oder
+    Mock-Objekte austauschen zu können. Es gibt empirische Belege, dass Verstöße gegen
+    das Gesetz von Demeter Indikatoren für die erhöhte Fehleranfälligkeit einer Software sind.[Guo 2011]
+    
 \end{itemize}
 
 \subsection{Testen von Software}\label{arten-von-tests} 
@@ -575,11 +575,11 @@ gilt, dass guter Code leicht testbar ist. Gute Unit-Tests sind damit ein starker
 \subsubsection{Die Stoftwaretestpyramide}
 
 \begin{figure}[H]
-	\begin{center}
-		\includegraphics[width=0.9\textwidth]{testing_pyramide}
-		\caption{Softwaretestpyramide}
-		\label{[softwaretestpyramide]}
-	\end{center}
+    \begin{center}
+        \includegraphics[width=0.9\textwidth]{testing_pyramide}
+        \caption{Softwaretestpyramide}
+        \label{[softwaretestpyramide]}
+    \end{center}
 \end{figure}
 
 Die Softwaretestpyramide, die in \ref{[softwaretestpyramide]} visualisiert ist, basiert auf Alister Scott ~\footcite[Vgl.]{website:scott.2011}, Martin Fowler

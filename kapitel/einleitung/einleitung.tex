@@ -1,10 +1,24 @@
 \section{Einleitung}
-\subsection{Problemstellung}
-Ausgehend von einer Shopware ERP Schnittstelle, werden die gängigen Testautomatisierungen im PHP Umfeld in dieser Bachelor-Thesis	 	
+\subsection{Ausgangssituation und Problemstellung}
+Ausgehend von einer entwickelten ERP-Schnittstelle für die Verknüpfung eines Warenwirtschaftssystems und einem Online-Shop die nur eine manuelle Testabdeckung aufweist, werden mit dieser Bachelor-Thesis die Testprozesse analysiert und eine neue Schnittstelle mit konsequenter automatisch Testabdeckung von der best it GmbH \& Co. KG umgesetzt. Die best it GmbH \& Co. KG ist eine der führenden eCommerce Agenturen im deutschsprachigen Raum, die sich auf die Entwicklung und Digitalisierung von Geschäftsmodellen im B2C- und B2B-Handel spezialisiert hat. Die best it GmbH \& Co. KG pflegt eine langjährige Partnerschaft mit der Shopware AG, die zeitgleich auch der Hersteller der gleichnamigen Online-Shop Software Shopware ist. 
 
+Da der neue Kunde schon bereits einen Shopware Online-Shop hat, war die Ist-Analyse ohne größere Einarbeitung durchführbar. Das Ergebnis war, dass die bestehende Schnittstelle des Kunden gravierende Mängel auf weißt. Durch die Art der Schnittstellenumsetzung lassen sich notwendige Aktualisierung des eingesetzten Online-Shop System nur schwer und mit hohem finanziellen Aufwand einspielen. Zusätzlich sind Funktionserweiterungen auch mit hohen finanziellen Aufwänden verbunden. Der vorherige Dienstleister hat die umgesetzten Funktionalitäten der Schnittstelle nur spärlich dokumentiert. Eine detaillierte Testanweisung fehlt gänzlich. 
+
+Der Kunde steht durch den immer größer werdenden Wettbewerb sowie durch eine immer größere Preissensetivität der Käufer unter immensem Kosten- und Leistungsdruck. Die Prozesse für die Logistik und den Versand sowie Stammdatenpflege und Bestandsaktualisieren müssen automatisiert sein, um eine effizientes und somit auch ein Kostengünstiges Wirtschaften zu ermöglichen. Eine wichtige, wenn nicht die wichtigste Voraussetzung dafür, stellt eine funktionierende und verlässliche bidirektionale Schnittstelle zwischen Online-Shop und Warenwirtschaft dar.
 
 \subsection{Zielsetzung}
+Aufbauend auf den theoretischen Grundlagen, Kapitel \ref{theoretische-grundlagen}, wird mit dieser Bachelor-Thesis die Zielsetzung verfolgt, die aktuellen Probleme und Schwachstellen der eingesetzten Schnittstelle zu ergründen. Um fundierte Informationen für das Soll-Konzept zu haben, wird eine SWOT-Analyse bezüglich dem Thema der Testautomatisierung in Kapitel \ref{swot-analyse} durchgeführt. Dies stellt die Entscheidungsgrundlage da um die neu zu entwickelnde Schnittstelle mit einer Testautomatisierung zu versehen. 
 
-\subsection{Grenzen und Bedingungen der Arbeit}
+Die neue Schnittstelle wird mit einer hohen Testabdeckung entwickelt um die geforderten Anforderungen des Kunden zu erfüllen. Um den nun erreichten Mehrwert für den Kunden zu Verfügung zustellen, wird der erstellte Quellcode und die daraus resultierenden Tests mit einem Mutation-Testing Szenario geprüft. Die dadurch entstehende Metrik liefert dem Kunden einen neutralen Wert wie gut die Testautomatisierung wirklich ist. 
 
 \subsection{Aufbau der Arbeit}
+Zuerst werden die notwendigen Theoretischen Grundlagen in Kapitel \ref{theoretische-grundlagen} erläutert. Ein Schwerpunkt dieses Kapitels stellen die verschiedenen Testarten, Clean-Code und Software-Metriken dar.
+
+In dem anschließendem Kapitel befindet sich eine detaillierte Ist- und Schwachstellenanalyse der aktuell eingesetzten Schnittstelle. Unterstützend für das Soll-Konzept ist eine SWOT-Analyse bezüglich der Testautomatisierung durchgeführt worden. Darauf folgend befindet sich das Soll-Konzept.
+
+Als weiteren Schwerpunkt der Arbeit folgt nun in Kapitel \ref{umsetzung} die Umsetzung der neuen Schnittstelle inklusive der erstellten Tests. Abschließend wird ein Fazit gezogen und ein Ausblick gewährt.
+
+
+%\subsection{Grenzen und Bedingungen der Arbeit}
+
+%\subsection{Aufbau der Arbeit}

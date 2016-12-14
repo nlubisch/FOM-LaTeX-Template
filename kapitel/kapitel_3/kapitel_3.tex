@@ -2,7 +2,7 @@
 \section{Umsetzung von Testautomatisierung}\label{umsetzung}
 
 \subsection{Strukturelle Voraussetzungen}
-Die Neuentwicklung soll die beschriebenen und etablierten Best-Practices berücksichtigen und umsetzen. Eine Konsequente Einhaltung zum Beispiel des Single Responsibility Principles führt zu einer einfachen und intuitiven Klassenstruktur da die jeweils erstellten Klassen einen eindeutigen Namen besitzen und nur eine Aufgabe erfüllen. Eine exemplarische Verzeichnisstruktur und sogleich auch Namespacestruktur könnte somit wie folgt aussehen: 
+Die Neuentwicklung soll die beschriebenen und etablierten Best-Practices berücksichtigen und umsetzen. Eine Konsequente Einhaltung zum Beispiel des Single Responsibility Principles führt zu einer einfachen und intuitiven Klassenstruktur da die jeweils erstellten Klassen einen eindeutigen Namen besitzen und nur eine Aufgabe erfüllen. Eine exemplarische Verzeichnis-und sogleich auch Namespacestruktur könnte somit wie folgt aussehen: 
 
 \begin{itemize}
 	\item Commands
@@ -14,13 +14,13 @@ Die Neuentwicklung soll die beschriebenen und etablierten Best-Practices berück
 	\item Writer
 \end{itemize}
 
-Im Namespace Writer befinden sich alle Klassen die gewisse Datenströme in einem beliebigen Format abspeichern. Für jedes Datenformat gibt es jeweils eine eigenständige Klasse um dem Single Responsibility Principles gerecht zu werden. Zusätzlich müssen die ggf. vorhandenen Abhängigkeiten über einem geeigneten Verfahren auflösbar sein. Hier bietet sich an Abhängigkeiten via Dipendency Injection zu benennen und diese via dem constructor der jeweiligen Klasse zu übergeben, sogenannten constructor injection.
+Im Namespace Writer befinden sich alle Klassen die gewisse Datenströme in einem beliebigen Format abspeichern. Für jedes Datenformat gibt es jeweils eine eigenständige Klasse um dem Single Responsibility Principles gerecht zu werden. Zusätzlich müssen die ggf. vorhandenen Abhängigkeiten über einem geeigneten Verfahren auflösbar sein. Hier bietet sich an Abhängigkeiten via Dipendency Injection zu benennen und diese via dem constructor der jeweiligen Klasse zu übergeben, sogenannte constructor injection.
 
 \subsection{Auswahl der Testwerkzeuge}
 \subsubsection{PHPUnit}
-Die Auswahl für die Durchführung und Erstellung der benötigten Unit- und Integrationstest viel auf das Framework PHPUnit. Dies ist in der PHP-Entwicklung der defakto Standard für diese Aufgaben geworden und wird Hauptsächlich von Sebastian Bergmann entwickelt. PHPUnit wird ab der Version 3.0 unter der Berkeley Software Distribution (BSD)-Lizenz veröffentlicht und kann problemlos als PHP-Archive (phar) Paket heruntergeladen und installiert werden.
+Die Auswahl für die Durchführung und Erstellung der benötigten Unit- und Integrationstest viel auf das Framework PHPUnit. Dies ist in der PHP-Entwicklung der de facto Standard für diese Aufgaben geworden und wird Hauptsächlich von Sebastian Bergmann entwickelt. Zusätzlich gibt es nur ein Mutation Testing Framework für PHP-Projekte und dies baut auf dem PHPUnit Framework auf. PHPUnit wird ab der Version 3.0 unter der Berkeley Software Distribution (BSD)-Lizenz veröffentlicht und kann problemlos als PHP-Archive (phar) Paket heruntergeladen und installiert werden.
 
-PHPUnit basiert auf dem xUnit-Konzept, welches auch Anwendung in anderen Programmiersprachen findet (z.B. JUnit für Java).
+Konzeptionell basiert es auf dem xUnit-Konzept, welches auch Anwendung in anderen Programmiersprachen findet (z.B. JUnit für Java). Zusätzlich wird das Framework Quelloffen auf 
 
 \subsubsection{Behat/Mink}
 - GUI Testing
@@ -28,8 +28,96 @@ PHPUnit basiert auf dem xUnit-Konzept, welches auch Anwendung in anderen Program
 
 
 \subsubsection{Humbug}
-Humbug ist das einzige Mutationtestingframework für die Anwendung in PHP-Projekten. Glücklicherweise unterstützt es Vorzugsweise PHPUnit und baut auf dessen Testergebnisse auf.
+Humbug ist das einzige existierende Mutationtesting Framework für die Anwendung in PHP-Projekten. Glücklicherweise unterstützt es Vorzugsweise PHPUnit und baut auf dessen Testergebnisse auf. Wie im Kapitel \ref*{mutation-testing} beschrieben, verändert Humbug die eingesetzte Software minimal und führt dann die vorhandenen Tests erneut aus. 
 
+Aktuell unterstützt Humbug folgende Mutationsarten:
+\begin{table}[H]
+ 	 \caption{Binary Arithmetic}
+ \begin{tabular}{cccc}
+ 	\textbf{Original} & \textbf{Verändert} & \textbf{Original} & \textbf{Verändert} \\
+ 	+ & - & /= & *= \\
+ 	- & + & \%= & *= \\
+ 	* & / & **= & /= \\
+ 	/ & * & \& & | \\
+ 	\% & * & | & \& \\
+ 	** & / & \textasciicircum & \& \\
+ 	+= & -= & ~ &  \\
+ 	-= & += & >> & << \\ 	 	 	 	 	 	
+ 	*= & /= & << & >> \\ 	 	 	 	 	 	
+ \end{tabular}
+\end{table}
+
+
+\begin{table}[h]
+	\caption{Boolean Substitution}
+	\begin{tabular}{cc}
+		\textbf{Original} & \textbf{Verändert} \\
+		true & false \\
+		false & true \\
+		\&\& & || \\
+		|| & \&\& \\
+		and & or \\
+		or & and \\
+		! & \\
+	\end{tabular}
+\end{table}
+
+\begin{table}[H]
+	\caption{Conditional Boundaries}
+	\begin{tabular}{cc}
+		\textbf{Original} & \textbf{Verändert} \\
+		> & >= \\
+		< & <= \\
+		>= & > \\
+		<= & < \\
+	\end{tabular}
+\end{table}
+
+\begin{table}[H]
+	\caption{Negated Conditionals}
+	\begin{tabular}{cccc}
+		\textbf{Original} & \textbf{Verändert} & \textbf{Original} & \textbf{Verändert} \\
+		== & != & > & <= \\
+		!= & == & < & >= \\
+        <> & == & >= & < \\
+	    === & !== & <= & > \\
+        !== & === &  &  \\
+	\end{tabular}
+\end{table}
+
+\begin{table}[H]
+	\caption{Increments}
+	\begin{tabular}{cc}
+		\textbf{Original} & \textbf{Verändert} \\
+		++ & -- \\
+		-- & ++ \\
+	\end{tabular}
+\end{table}
+
+\begin{table}[H]
+	\caption{Return Values}
+	\begin{tabular}{llll}
+		\textbf{Original} & \textbf{Verändert} & \textbf{Original} & \textbf{Verändert} \\
+		return true; & return false; & return 1.0>; & return -( + 1); \\
+		return false; & return true; & return \$this; & return null; \\
+		return 0; & return 1; & return function(); & function(); return null; \\
+		return ; & return 0; & return new Class; & new Class; return null; \\
+		return 0.0; & return 1.0; & return (Anything); & (Anything); return null; \\
+		return 1.0; & return 0.0; & & \\
+	\end{tabular}
+\end{table}
+
+\begin{table}[H]
+	\caption{Literal Numbers}
+	\begin{tabular}{cc}
+		\textbf{Original} & \textbf{Verändert} \\
+		0 & 1 \\
+		1 & 0 \\
+		Int > 1 & Int + 1 \\
+		Float >= 1 / <=2 & Float + 1 \\
+		Float >2 & 1 \\
+	\end{tabular}
+\end{table}
 
 \subsection{Technische Umsetzung}
 \subsubsection{Softwarearchitektur}

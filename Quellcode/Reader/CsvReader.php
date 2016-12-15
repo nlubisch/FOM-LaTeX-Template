@@ -2,9 +2,9 @@
 
 namespace EtosErpConnector\Etos\Reader;
 
-class CsvReader implements CsvReaderInterface
+class CsvReader implements ReaderInterface
 {
-    public function readCsv($file)
+    public function readFromFile($file)
     {
         if (!file_exists($file)) {
             return [];

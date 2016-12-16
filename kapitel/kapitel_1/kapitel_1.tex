@@ -18,22 +18,22 @@ In der Einleitung von Software-Qualität: Testen, Analysieren und Verifizieren v
 
 „Jedes Unternehmen, das Software entwickelt, bemüht sich, die beste Qualität auszuliefern. Man kann ein Ziel aber nur dann nachweisbar erreichen, wenn es präzise definiert ist, und das gilt für den Begriff „beste Qualität“ nicht. Softwarequalität ist facettenreich. Viele Eigenschaften einer Software ergeben gemeinsam die Software-Qualität. Nicht alle diese Eigenschaften sind gleichermaßen für den Benutzer und den Hersteller einer Software wichtig.“ ~\footcite[S 1-3]{Liggesmeyer.2009}
 
-Die Anwender einer Applikation haben demzufolge eine andere Sicht auf die Qualität als die umsetzenden Softwareentwickler. Wir definieren diese unterschiedlichen Sichtweisen als externe beziehungsweise interne Qualität. Nigel Bevan erläutert diesen Ansatz, der in der Norm ISO/IEC 9126-1 ~\footcite[]{ISOIEC91261} spezifiziert ist, sehr ausführlich ~\footcite[]{Bevan.1999}. In den Folgenden Abschnitten findet eine genaue Betrachtung der beiden Sichtweisen statt.
+Die Anwender einer Applikation haben demzufolge eine andere Sicht auf die Qualität als die umsetzenden Softwareentwickler. Wir definieren diese unterschiedlichen Sichtweisen als externe beziehungsweise interne Qualität. Nigel Bevan erläutert diesen Ansatz, der in der Norm ISO/IEC 9126-1 ~\footcite[]{ISOIEC91261} spezifiziert ist, sehr ausführlich ~\footcite[]{Bevan.1999}. In den folgenden Abschnitten findet eine genaue Betrachtung der beiden Sichtweisen statt.
 
 \subsubsection{Interne Qualität}
 Die Bedürfnisse der Entwickler beziehungsweise der Administratoren einer Anwendung machen deren interne Qualität aus. Beispielsweise ist für Softwareentwickler wichtig, dass der Code einfach zu lesen, zu verstehen, anzupassen und zu erweitern ist. Ist dies nicht der Fall, so wird es mit der Zeit immer schwieriger, die kontinuierlich gestellten und meist unvorhersehbaren Änderungswünsche des Kunden umzusetzen. Dieser weiß selber am Anfang eines Projektes nicht was die perfekte Lösung ist, da die Problemdomäne in der Regel nicht konkret greifbar für ihn ist. Irgendwann führen selbst minimale Änderungen an der Software zu unerwarteten Seiteneffekten und damit zu hohen Entwicklungskosten.
 
-Die interne Qualität von Software ist für die Auftraggeber und Endbenutzer zunächst kaum wahrnehmbar. Für die Anwender einer Software muss diese die primär an sie gestellten funktionalen Anforderungen weitestmöglich erfüllen, und sie muss leicht und intuitiv zu bedienen sein. Ist die Anwendung bei der Abnahme dann noch „schnell genug“ ist, sind viele Auftraggeber und dessen Endanwender zufrieden.
+Die interne Qualität von Software ist für die Auftraggeber und Endbenutzer zunächst kaum wahrnehmbar. Für die Anwender einer Software muss diese die primär an sie gestellten funktionalen Anforderungen weitestmöglich erfüllen und sie muss leicht und intuitiv zu bedienen sein. Ist die Anwendung bei der Abnahme dann noch „schnell genug“, sind viele Auftraggeber und dessen Endanwender zufrieden.
 
-Mangelnde oder sogar gänzlich fehlende interne Qualität wird erst auf längere Sicht spürbar. Mit der Zeit stellt man fest, dass die Bearbeitungszeit, bis scheinbar einfache bis triviale Fehler behoben sind, lang wenn nicht sogar sehr lange ist. Erweiterungen an der Software oder Änderungen sind nur mit äußerst großem Aufwand realisierbar. In den meisten Fällen bitten die Entwickler kurz oder lang oft darum Ressourcen zu erhalten, um den Code aufzuräumen, sogenanntes refaktorieren zu betreiben. Refaktorierung wird von Fowler wie folgt beschrieben: 
+Mangelnde oder sogar gänzlich fehlende interne Qualität wird erst auf längere Sicht spürbar. Mit der Zeit stellt man fest, dass die Bearbeitungszeit, bis scheinbar einfache bis triviale Fehler behoben sind, lang wenn nicht sogar sehr lang ist. Erweiterungen an der Software oder Änderungen sind nur mit äußerst großem Aufwand realisierbar. In den meisten Fällen bitten die Entwickler kurz oder lang oft darum Ressourcen zu erhalten, um den Code aufzuräumen, das sogenannte refaktorieren. Refaktorierung wird von Fowler wie folgt beschrieben: 
 
 \dq{}Eine Refaktorierung ist eine Änderung an der internen Struktur einer Software ohne ihr beobachtbares Verhalten zu ändern.\dq{} ~\footcite[Seite xviii]{Fowler.2000}
 
 Oftmals wird eine solche Refaktorierung des Codes allerdings nicht (regelmäßig genug) durchgeführt, weil Auftraggeber oder Management den Entwicklern nicht die notwendigen Spielräume einräumen.
 
-Automatisierte Entwicklertests auf Modulebene sogenannte Unit-Tests, ermöglichen die unmittelbare Überprüfung, ob durch eine Änderung neue Fehler eingeführt oder bestehende Funktionalitäten unbewusst verändert wurden. Ohne diese Tests ist die Refaktorierung von Quellcode nur unter hohen Risiken möglich oder extrem hohen manuellen Testaufwänden.
+Automatisierte Entwicklertests auf Modulebene sogenannte Unit-Tests, ermöglichen die unmittelbare Überprüfung, ob durch eine Änderung neue Fehler eingeführt oder bestehende Funktionalitäten unbewusst verändert wurden. Ohne diese Tests ist die Refaktorierung von Quellcode nur unter hohen Risiken oder extrem hohen manuellen Testaufwänden möglich.
 
-Ein Ziel der Qualitätssicherung, oder genauer genommen des Projektmanagements/Qualitätsmanagements, muss daher sein, für alle am Projekt beteiligten Parteien die Kosten und den Nutzen von interner Qualität transparent und bewusst zu machen. Gelingt es, die Kosten zu quantifizieren, die durch schlechte interne Qualität langfristig entstehen, kann man darauf basierend im Rückschluss die Kostenersparnis aufzeigen, die Code von hoher interner Qualität ermöglichen würde. Das ist eine wichtige Voraussetzung dafür, das ein offizielles Budget zur Verwendung von Code-Refaktorierung berücksichtigt wird.
+Ein Ziel der Qualitätssicherung oder genauer genommen des Projektmanagements/Qualitätsmanagements, muss daher sein, für alle am Projekt beteiligten Parteien die Kosten und den Nutzen von interner Qualität transparent und bewusst zu machen. Gelingt es, die Kosten zu quantifizieren, die durch schlechte interne Qualität langfristig entstehen, kann man darauf basierend im Rückschluss die Kostenersparnis aufzeigen, die Code von hoher interner Qualität ermöglichen würde. Das ist eine wichtige Voraussetzung dafür, das ein offizielles Budget zur Verwendung von Code-Refaktorierung berücksichtigt wird.
 
 \subsubsection{Externe Qualität}
 Der Kunde beziehungsweise der Benutzer einer Anwendung interessiert sich für diejenigen Qualitätsaspekte, die für ihn greifbar sind. Diese machen die sogenannte externe Qualität
@@ -56,7 +56,7 @@ Beispielsweise werden die Anforderungen, die der Kunde an sein Produkt stellt, i
 
 Für Optimierungen in Bezug auf die Reaktionsgeschwindigkeit ist unter anderem das Messen der Reaktions- und Antwortzeit relevant. Man benötigt Werkzeuge und Techniken, mit denen man diejenigen 
 Verbesserungen finden kann, die bei minimalem Aufwand und minimalen Kosten den größten Nutzen versprechen. Sowohl Entwickler als auch Administratoren sind beim Capacity Planning 
-dafür verantwortlich, diejenigen Teile der Anwendung zu identifizieren, die zukünftig möglicherweise zu Flaschenhälsen, sogenannten Botlenecks, werden können, wenn die Anwendung geändert wird 
+dafür verantwortlich, diejenigen Teile der Anwendung zu identifizieren, die zukünftig möglicherweise zu Flaschenhälsen, sogenannte Bottlenecks, werden können, wenn die Anwendung geändert wird 
 oder das Nutzeraufkommen wächst. Diese Informationen sind unverzichtbar, um die Qualität einer Anwendung in Bezug auf Verfügbarkeit und Zuverlässigkeit dauerhaft zu sichern.
 % vgl Software Qualität
 
@@ -73,22 +73,22 @@ when the debt is not repaid. Every minute spent on not-quite-right code counts a
 on that debt. Entire engineering organizations can be brought to a stand-still 
 under the debt load of an unconsolidated implementation, object-oriented or otherwise.“ ~\footcite[Vgl.]{website:ward:cunningham} % @todo check format
 
-Cunningham vergleicht schlechten Quellcode mit einer Art von Hypothek, für das natürlich auch Zinsen fällig werden. Es kann durchaus sinnvoll oder gar notwendig sein, eine Hypothek aufzunehmen, wenn dadurch das Produkt schneller vermarktungsfähig ist. Findet aber keine Tilgung der Hypothek statt, durch die Refaktorierung der Codebasis und somit eine Steigerung der interne Qualität, dann entstehen
-langfristig erhebliche Kosten für die anfallenden Zinszahlungen. Wenn sich mit der Zeit die Schulden anhäufen, dann nehmen die dafür Notwendigen Zinszahlungen einem mehr und mehr den Spielraum, bis
-man schließlich Konkurs anmelden muss. Auf die Software-Entwicklung übertragen bedeutet dies, dass man eine Anwendung als unwartbar bezeichnet. Die Kosten für jede noch so kleine Änderung sind so hoch gestiegen, dass es unwirtschaftlich ist, den Code weiter zu warten geschweige weiterzuentwickeln.
+Cunningham vergleicht schlechten Quellcode mit einer Art von Hypothek, für das natürlich auch Zinsen fällig werden. Es kann durchaus sinnvoll oder gar notwendig sein, eine Hypothek aufzunehmen, wenn dadurch das Produkt schneller vermarktungsfähig ist. Findet aber keine Tilgung der Hypothek durch Refaktorierung der Codebasis und somit eine Steigerung der interne Qualität statt, dann entstehen
+langfristig erhebliche Kosten für die anfallenden Zinszahlungen. Wenn sich mit der Zeit die Schulden anhäufen, dann nehmen die dafür notwendigen Zinszahlungen einem mehr und mehr den Spielraum, bis
+man schließlich Konkurs anmelden muss. Auf die Software-Entwicklung übertragen bedeutet dies, dass man eine Anwendung als unwartbar bezeichnet. Die Kosten für jede noch so kleine Änderung sind so hoch gestiegen, dass es unwirtschaftlich ist, den Code weiter zu warten geschweige denn weiterzuentwickeln.
 
-Mangelnde interne Qualität von Software wird besonders of dann zu einem Problem, wenn die zu entwickelnde Software an externe Agenturen/Dienstleister ausgelagert wird und der Auftraggeber primär an niedrigen Kosten und einer kurzen Time-to-Market gelegen ist. Da die Qualitätssicherung und insbesondere das Schreiben von Unit-Tests die Kosten im Projekt zunächst erhöhen, ohne dass den Kosten einen unmittelbaren und messbaren Nutzen gegenübersteht. Dadurch hat der beauftragte Dienstleister in den meisten Fällen kaum Freiräume, geschweige denn eine Motivation, um qualitativ hochwertigen Quellcode zu produzieren. Mittel- und Langfristig macht sich der Schaden für dem Auftraggeber in Form von deutlich höheren Wartungskosten bemerkbar.
+Mangelnde interne Qualität von Software wird besonders oft dann zu einem Problem, wenn die zu entwickelnde Software an externe Agenturen/Dienstleister ausgelagert wird und der Auftraggeber primär an niedrigen Kosten und einer kurzen Time-to-Market gelegen ist. Da die Qualitätssicherung und insbesondere das Schreiben von Unit-Tests die Kosten im Projekt zunächst erhöht, ohne dass den Kosten einen unmittelbaren und messbaren Nutzen gegenübersteht. Dadurch hat der beauftragte Dienstleister in den meisten Fällen kaum Freiräume, geschweige denn eine Motivation, um qualitativ hochwertigen Quellcode zu produzieren. Mittel- und langfristig macht sich der Schaden für den Auftraggeber in Form von deutlich höheren Wartungskosten bemerkbar.
 
-%rewrite open
+%rewrite open | NL: definitiv umschreiben - teilweise recht komplizierte Sätze und schlecht verständliche Konstrukte
 Es ist daher für jedes Software-Projekt und insbesondere beim Outsourcing besonders
 wichtig, dass nicht nur die zu erfüllenden Kriterien bezüglich der externen Qualität festgelegt
 werden, sondern vom Auftraggeber auch ein sinnvolles Maß an interner Qualität eingefordert wird. Selbstverständlich muss der Auftraggeber dazu dem Dienstleister im Projekt auch einen gewissen finanziellen und zeitlichen Spielraum zugestehen.
 
-Die Betriebs- und Wartungskosten für Software sind meisten zu niedrig kalkuliert da diese unterschätzt werden. Eine Realisierung eines mittelgroßes Software-Projekt dauert vielleicht ein oder zwei Jahre, die resultierende Anwendung ist aber in der Regel für Jahrzehnte in Betrieb. Jedenfalls meistens deutlich länger als bei der Planung ursprünglich gedacht.
+Die Betriebs- und Wartungskosten für Software sind meistens zu niedrig kalkuliert, da diese unterschätzt werden. Die Realisierung eines mittelgroßen Software-Projekt dauert vielleicht ein oder zwei Jahre. Die resultierende Anwendung ist aber in der Regel für Jahrzehnte in Betrieb. Jedenfalls meistens deutlich länger als bei der Planung ursprünglich gedacht.
 Der größte Kostenblock für Anwendungen mit langer Nutzungsdauer sind meist der Betrieb und die Wartung. Dies gilt besonders für Anwendungen, die häufigen Änderungen unterliegen. Gerade für Webanwendungen
 sind häufige Anpassungen typisch.
 
-Andere Anwendungen die zum Beispiel für Großrechner im Finanzsektor oder hochverfügbare Telefonvermittlungen ihren Einsatz finden, müssen dagegen nur selten verändert werden. Während hier eine Änderung pro Quartal schon einen kurzen Änderungsintervall darstellt, sind für viele Webanwendungen mehrere Releases pro Monat oder sogar Wöchentlich schon längst die Regel.
+Andere Anwendungen, die zum Beispiel für Großrechner im Finanzsektor oder in hochverfügbaren Telefonvermittlungen ihren Einsatz finden, müssen dagegen nur selten verändert werden. Während hier eine Änderung pro Quartal schon einen kurzen Änderungsintervall darstellt, sind für viele Webanwendungen mehrere Releases pro Monat oder sogar Wöchentlich schon längst die Regel.
 
 Ron Jeffries ermahnt Softwareentwickler, nicht an der internen Qualität zu sparen, um die Entwicklung schneller voran zu bringen:
 „If slacking on quality makes us go faster, it is clear evidence that there is room to improve our ability to deliver quality rapidly.“ ~\footcite[Vgl.]{website:jeffries.2010}
@@ -131,9 +131,9 @@ Development) führt im Idealfall dazu, dass ...
 \begin{itemize}
     \item es keinen Produktionscode gibt, der nicht durch einen Test motiviert ist. Dies reduziert das Risiko, Produktionscode zu schreiben, der nicht benötigt wird.
 
-    \item  es keinen Produktionscode gibt, der nicht durch mindestens einen Test abgedeckt (Code-Coverage) ist, und damit Änderungen am Produktionscode nicht zu unbemerkten Seiteneffekten führen können.
+    \item es keinen Produktionscode gibt, der nicht durch mindestens einen Test abgedeckt (Code-Coverage) ist, und damit Änderungen am Produktionscode nicht zu unbemerkten Seiteneffekten führen können.
 
-    \item testbarer Produktionscode, und damit sauberer Code (siehe nächster Abschnitt), geschrieben wird.
+    \item testbarer Produktionscode, und damit sauberer Code (siehe nächsten Abschnitt), geschrieben wird.
 
     \item die „Schmerzen“, die bestehender schlechter Code verursacht, verstärkt werden, da dieser nicht oder nur mit unverhältnismäßig hohem Aufwand getestet werden kann. Dies motiviert dazu, bestehenden schlechten Code durch Refaktorierung konsequent zu verbessern.
 \end{itemize}
@@ -142,7 +142,7 @@ Studien wie z.B. \dq{}Software Architecture Improvement through Test-Driven Deve
 Entwicklung zu signifikanten Verbesserungen der Produktivität der Entwickler sowie der Softwarequalität führen kann. 
 Die Anpassung zwischen konstruktiver Qualitätssicherung und normaler Softwareentwicklung ist fließend. Beispielsweise wird die Anpassbarkeit 
 der Software durch den Einsatz von objektorientierter Programmierung und die Verwendung von 
-Entwurfsmustern verbessert. Das entwickeln von sauberem Code (siehe nächster Abschnitt) sowie die Verwendung 
+Entwurfsmustern verbessert. Das Entwickeln von sauberem Code (siehe nächsten Abschnitt) sowie die Verwendung 
 von architekturellen Mustern wie Schichtenarchitektur, serviceorientierte Architektur oder Domain-Driven Design 
 führen, sofern sie richtig umgesetzt werden, zu deutlichen Verbesserungen in Bezug auf Testbarkeit, Wartbarkeit 
 und Wiederverwendbarkeit der einzelnen Komponenten der Software. ~\footcite[Vgl.]{Janzen.2006}
@@ -166,7 +166,7 @@ easily be substituted and clear responsibilities that can easily be invoked and 
 In software-engineering terms, that means that the code must be loosely coupled and
 highly cohesive – in other words, well-designed.“
 
-In den Folgenden Abschnitten wollen wir diese Punkte genauer betrachten.
+In den folgenden Abschnitten wollen wir diese Punkte genauer betrachten.
 
 \subsubsection{Explizite und minimale Abhängigkeiten} % todo rewrite wenn möglich
 Die Abhängigkeiten einer zu testenden Methode müssen klar und explizit in der API definiert sein. Das bedeutet, dass benötigte Objekte entweder an den Konstruktor der entsprechenden Klasse oder an die Methode selbst übergeben werden müssen (Dependency Injection). Die benötigten Objekte sollen nicht im Rumpf der Methode erzeugt werden, da die Abhängigkeiten sonst nicht gekapselt sind und daher nicht gegen Stub- oder Mock-Objekte ausgetauscht werden können. Je weniger Abhängigkeiten eine Methode hat, desto einfacher gestaltet sich das Schreiben ihrer Tests.
@@ -176,11 +176,11 @@ Das Single Responsibility Principle (SRP) verlangt, dass eine Klasse nur für ei
 fest definierte Aufgabe da ist. Sie sollte zusätzlich nur Methoden beinhalten, die direkt
 zur Erfüllung dieser Aufgabe beitragen. Es sollte nie mehr als einen validen Grund geben, diese Klasse zu ändern. ~\footcite[Vgl.]{Martin.2002}
 
-Durch dieses Prinzip ist die Verantwortlichkeit einer Klasse klar definiert und zusätzlich lassen sich ihre Methoden einfach aufrufen und über ihre Rückgabewerte verifizieren. Somit sind alle Vorbrausetzungen für das Schreiben der entsprechenden Unit-Tests vorhanden und die Umsetzung dessen ist trivial.
+Durch dieses Prinzip ist die Verantwortlichkeit einer Klasse klar definiert und zusätzlich lassen sich ihre Methoden einfach aufrufen und über ihre Rückgabewerte verifizieren. Somit sind alle Vorrausetzungen für das Schreiben der entsprechenden Unit-Tests vorhanden und die Umsetzung dieser ist trivial.
 
 \subsubsection{Keine Duplikation}
 Eine Klasse, die versucht, zu viel zu tun, und keine klare Verantwortlichkeit hat, ist eine
-hervorragende Brutstätte für duplizierten Code, Chaos und Tod ~\footcite{Fowler.2000}[Vgl.]. Duplizierter Code erschwert die Wartung der Software, da die Konsistenz zwischen den einzelnen Duplikaten gewährleistet sein muss. Ein Fehler der von deinem ggf. neu an dem Projekt beteiligten Softwareentwickler behoben wird, ist nicht zwangsläufig an allen duplizierten Stellen behoben. Dies führt zu schwierigen Fehlersuchen und erhöht die Anfälligkeit der Software für Seiteneffekte. 
+hervorragende Brutstätte für duplizierten Code, Chaos und Tod ~\footcite{Fowler.2000}[Vgl.]. Duplizierter Code erschwert die Wartung der Software, da die Konsistenz zwischen den einzelnen Duplikaten gewährleistet sein muss. Ein Fehler der von einem ggf. neu an dem Projekt beteiligten Softwareentwickler behoben wird, ist nicht zwangsläufig an allen duplizierten Stellen behoben. Dies führt zu schwierigen Fehlersuchen und erhöht die Anfälligkeit der Software für Seiteneffekte. 
 
 \subsubsection{Kurze Methoden mit wenigen Ausführungszweigen}
 Eine Methode ist umso schwerer zu verstehen, je länger sie ist. Eine kurze Methode lässt
@@ -192,7 +192,7 @@ Für das Messen der internen Qualität gibt es verschiedene Software-Metriken. S
 
 Testbarkeit ist ein wichtiges Kriterium für die Wartbarkeit im Softwarequalitätsmodell von ISO/IEC 9126-1~\footcite{ISOIEC91261}[Vgl.]. Es in der Literatur mehrere Beispiele für Ansätze zur Quantifizierung von Testbarkeit basierend auf objektorientierten Software-Metriken. ~\footcite[Vgl. Seite 136-145]{Bruntink.2004} ~\footcite[Vgl. Seite 1 - 6]{Khan.2009}
 
-Einen weiteren guten Überblick über objektorientierte Software-Metriken ist im Buch von gibt beispielsweise im Buch \dq{}Object-Oriented Metrics in Practice: Using Software Metrics to Characterize, Evaluate, and Improve the Design of Object-Oriented Systems\dq{} von Michele Lanza und Radu Marinescu. ~\footcite[Vgl.]{Lanza.2006}
+Einen weiteren guten Überblick über objektorientierte Software-Metriken gibt es beispielsweise im Buch \dq{}Object-Oriented Metrics in Practice: Using Software Metrics to Characterize, Evaluate, and Improve the Design of Object-Oriented Systems\dq{} von Michele Lanza und Radu Marinescu. ~\footcite[Vgl.]{Lanza.2006}
 
 Man darf jedoch niemals vergessen, dass Metriken lediglich Indikatoren für Qualitätsprobleme sind. Metriken sollten immer als Hinweise auf bestimmte Stellen im Code verstanden werden,
 die man sich als Mensch ansehen sollte, um jeweils selbst zu beurteilen, ob und im welchem Maße der Code tatsächlich problematisch ist.
@@ -220,14 +220,14 @@ Im Folgenden betrachten wir einige Software-Metriken, die für die Testbarkeit b
     Seiteneffekten führen, ist geringer als bei Code, der einen hohen CRAP-Wert aufweist.
     Letzteres ist für komplexen Code mit wenigen oder sogar gar keinen Tests der Fall.
     
-    Der CRAP-Wert kann entweder durch das Schreiben von Tests oder durch eine geeignete Refaktorierung gesenkt werden. Beispielsweise helfen die Refaktorierungen Methode extrahieren und Bedingten Ausdruck durch Polymorphismus ersetzen dabei, eine Methode zu verkürzen und die Anzahl der möglichen Entscheidungspfade – und damit die zyklomatische Komplexität – zu verringern.
+    Der CRAP-Wert kann entweder durch das Schreiben von Tests oder durch eine geeignete Refaktorierung gesenkt werden. Beispielsweise helfen die Refaktorierungen Methode extrahieren und Bedingten Ausdruck durch Polymorphismus ersetzen dabei, eine Methode zu verkürzen und die Anzahl der möglichen Entscheidungspfade – und damit die zyklomatische Komplexität – zu verringern. %NL: der Anfang ist besonders schwer verständlich
     
     \item \textbf{Kohäsion und Kopplung}
     
     Ein System mit starker Kohäsion besteht aus Komponenten, die nur für genau eine spezifizierte Aufgabe zuständig sind. Eine lose Kopplung ist dann erreicht, wenn Klassen voneinander weitgehend unabhängig sind und nur durch wohldefinierte Schnittstellen miteinander kommunizieren [Yourdon 1979].
     
-    Das Gesetz von Demeter ~\footcite[Vgl. Seite 67-78]{Lieberherr.1989}verlangt, dass eine Methode eines Objekts nur Methoden desselben 
-    Objekts sowie von an die Methode per Parameter übergebenen und in der Methode erzeugten Objekten aufrufen darf. Die Einhaltung dieses Gesetzes führt zu loser Kopplung. Für die Testbarkeit ist es wichtig, auf das Erzeugen von Objekten im Rumpf einer Methode zu verzichten, um so alle ihre Abhängigkeiten gegen sogenannte Stub- oder Mock-Objekte austauschen zu können. Es gibt empirische Belege, dass Verstöße gegen das Gesetz von Demeter Indikatoren für die erhöhte Fehleranfälligkeit einer Software sind.[Guo 2011]
+    Das Gesetz von Demeter ~\footcite[Vgl. Seite 67-78]{Lieberherr.1989} verlangt, dass eine Methode eines Objekts nur Methoden desselben 
+    Objekts sowie von an die Methode per Parameter übergebenen und in der Methode erzeugten Objekten aufgerufen werden darf. Die Einhaltung dieses Gesetzes führt zu loser Kopplung. Für die Testbarkeit ist es wichtig, auf das Erzeugen von Objekten im Rumpf einer Methode zu verzichten, um so alle ihre Abhängigkeiten gegen sogenannte Stub- oder Mock-Objekte austauschen zu können. Es gibt empirische Belege, dass Verstöße gegen das Gesetz von Demeter Indikatoren für die erhöhte Fehleranfälligkeit einer Software sind.[Guo 2011]
     
 \end{itemize}
 
@@ -320,7 +320,7 @@ Verhält sich eine Anwendung im Browser-Test nicht wie erwartet, ist es oft nur 
 
 Es ist ein generelles Problem von Systemtests, an denen naturgemäß viele Komponenten beteiligt sind, dass man die Ursache von Fehlern nur schwer einkreisen kann. Ein fehlgeschlagener Test, egal ob manuell oder automatisiert durchgeführt, zeigt zwar, dass die getestete Software nicht wie erwartet funktioniert, gibt aber keine Auskunft darüber, wo der Fehler liegen könnte.
 
-Im letzten Kapitel wurde bereits ausgeführt, dass es unmöglich ist, eine Anwendung auch nur annähernd mit allen möglichen Eingaben zu testen. Selbst wenn man sich darauf beschränkt, alle Geschäftsvorfälle oder Geschäftsregeln mit jeweils einer repräsentativen Eingabe zu testen, wird  schnell eine nicht mehr beherrschbare Komplexität erreicht. In einem sozialen Netzwerk muss beispielsweise jeder Freund den neuesten Blog-Eintrag eines Benutzers kommentieren dürfen. Kommt Moderation ins Spiel, dann darf ein Kommentar zunächst für niemanden sichtbar sein (außer vielleicht für den Moderator und den Autor des Kommentars), muss aber nach der Freischaltung sichtbar sein. Darf der Autor des Kommentars diesen nun löschen oder ändern? Muss eine Änderung erneut moderiert
+Im letzten Kapitel wurde bereits ausgeführt, dass es unmöglich ist, eine Anwendung auch nur annähernd mit allen möglichen Eingaben zu testen. Selbst wenn man sich darauf beschränkt, alle Geschäftsvorfälle oder Geschäftsregeln mit jeweils einer repräsentativen Eingabe zu testen, wird schnell eine nicht mehr beherrschbare Komplexität erreicht. In einem sozialen Netzwerk muss beispielsweise jeder Freund den neuesten Blog-Eintrag eines Benutzers kommentieren dürfen. Kommt Moderation ins Spiel, dann darf ein Kommentar zunächst für niemanden sichtbar sein (außer vielleicht für den Moderator und den Autor des Kommentars), muss aber nach der Freischaltung sichtbar sein. Darf der Autor des Kommentars diesen nun löschen oder ändern? Muss eine Änderung erneut moderiert
 werden?
 
 Um Geschäftsregeln wie diese zu testen, müsste man sich abwechselnd mit mindestens zwei verschiedenen Benutzerkonten an der Anwendung anmelden. Selbst wenn man sich diese Mühe macht, steht man spätestens vor dem nächsten Release der Anwendung vor der Frage, ob man nun alle Tests wiederholen möchte oder einfach riskiert, dass die Anwendung aufgrund von unerwünschten Nebeneffekten einer Änderung nicht mehr wie erwartet funktioniert.
@@ -372,7 +372,7 @@ Im Gegensatz zu End-to-End-Tests, die eine gesamte Anwendung testen, testet man 
 
 Viele Entwickler haben das Ziel, mit Unit-Tests eine hohe Codeabdeckung zu erreichen, also im Rahmen der Tests möglichst jede Zeile des Produktionscodes auszuführen. Mit der PHP-Erweiterung Xdebug können beim Testen Informationen über die Line Coverage gesammelt werden, die von PHPUnit aufbereitet und im HTML-Format visualisiert oder als Text oder XML gespeichert werden können.
 
-Diese zeilenbasierte Codeabdeckung berücksichtigt nicht, dass der getestete Code im Allgemeinen mehrere Ausführungspfade hat. Die bereits vorgestellte NPath-Komplexität ist ein Maß für die Anzahl der Ausführungspfade in einem Codeabschnitt. Sie gibt an, wie viele Tests nötig sind, um eine vollständige Pfadabdeckung zu erreichen, also um nicht nur jede Codezeile, sondern auch jeden Ausführungspfad mindestens einmal zu durchlaufen.
+Diese zeilenbasierte Codeabdeckung berücksichtigt nicht, dass der getestete Code im Allgemeinen mehrere Ausführungspfade hat. Die bereits vorgestellte NPath-Komplexität ist ein Maß für die Anzahl der Ausführungspfade in einem Codeabschnitt. Sie gibt an, wieviele Tests nötig sind, um eine vollständige Pfadabdeckung zu erreichen, also um nicht nur jede Codezeile, sondern auch jeden Ausführungspfad mindestens einmal zu durchlaufen.
 
 Die zeilenbasierte Codeabdeckung allein ist also kein Nachweis für umfassende Tests, sondern dient im Gegenteil an sich nur dazu, zu zeigen, welche Teile des Codes noch vollständig ungetestet sind. Es gibt derzeit kein Werkzeug für PHP, mit dem sich Pfadabdeckungsstatistiken erstellen lassen. Es gibt allerdings Bestrebungen Xdebug und PHPUnit in diese Richtung weiterzuentwickeln ~\footcite[Vgl.]{Vergmann.2011}.
 
@@ -421,23 +421,23 @@ Eine andere Möglichkeit ist es, mehrere Tests gegen ein Testinventar auszuführ
 Man sieht, dass es sehr sinnvoll ist, Tests in einer minimalen Umgebung auszuführen.
 
 \subsubsection{GUI-Tests}
-Unter \nomenclature{GUI}{Graphical user interface}GUI-Tests versteht man die automatische Überprüfung der Benutzeroberfläche eines Anwenders. Dies sorgt dafür das alle Schaltflächen in der GUI die gewohnten Funktionen ausführen und nicht mit falschen Endpunkten verknüpft sind.
+Unter \nomenclature{GUI}{Graphical User Interface}GUI-Tests versteht man die automatische Überprüfung der Benutzeroberfläche eines Anwenders. Dies sorgt dafür das alle Schaltflächen in der GUI die gewohnten Funktionen ausführen und nicht mit falschen Endpunkten verknüpft sind.
 
 \subsubsection{Regressionstests}
-In der Entwicklung sollte nach jeder Änderung ein Regressionstest ausgeführt werden. Bei Regressionstest muss darauf geachtet werden, dass 1) immer die gleichen Tests ausführen sind, wenn ein bestimmer Code-Abschnitt zu testen ist und 2) das betreffende Tests die Akzeptanzkriterien der jeweiligen Anforderung abgleicht. Wenn nun später aber continuous integration System Jenkins in den Testprozess integriert würde, könnte man sich diese Arbeit sparen. Mit Jenkins würde es dann möglich sein, die Regressionstest regelmäßig auszuführen, etwas nach jeder Codeänderung oder einmal pro Nacht (Nightly Build). Falls Probleme auftreten sollten, würde die betroffenen Entwickler via Email, HipChat oder ähnlichen Kommunikationswege informiert.
+In der Entwicklung sollte nach jeder Änderung ein Regressionstest ausgeführt werden. Bei Regressionstest muss darauf geachtet werden, dass 1) immer die gleichen Tests auszuführen sind, wenn ein bestimmter Code-Abschnitt zu testen ist und 2) das betreffende Tests die Akzeptanzkriterien der jeweiligen Anforderung abgleicht. Wenn nun später aber das Continuous Integration System Jenkins in den Testprozess integriert würde, könnte man sich diese Arbeit sparen. Mit Jenkins würde es dann möglich sein, die Regressionstest regelmäßig auszuführen, etwa nach jeder Codeänderung oder einmal pro Nacht (Nightly Build). Falls Probleme auftreten, würden die betroffenen Entwickler via Email, HipChat oder ähnlichen Kommunikationswege informiert werden.
 
 \subsubsection{Mutation-Testing}\label{mutation-testing}
 
-Mutation-Testing (auch Mutation Analyse oder Programm Mutation genannt) wird verwendet um neue Software-Tests zu erstellen und die Qualität der vorhandenen Tests zu evaluieren. Die Durchführung von Mutation-Testing ist in der Theorie ziemlich einfach, das vorhandene, zu testende, Programm wird an wenigen Stellen verändert. Jede so neu entstandene Version dieses Programms nennt man Mutant. Jeder erstellte Mutant wird mit den vorhandenen Tests überprüft um zu verifizieren, dass sich die Test-Suite anders verhält und somit die Änderung an dem Programm bemerkt. Tritt dieser Fall ein, spricht man vom \dq{}killing the mutant\dq{}. Die existierende Test-Suite wird anhand der prozentualen entdecken von Mutanten bewertet. Desto höher dieser Wert ist, umso genauer sind die automatisierten Tests in der Überprüfung und Validierung der Software. 
+Mutation-Testing (auch Mutation Analyse oder Programm Mutation genannt) wird verwendet um neue Software-Tests zu erstellen und die Qualität der vorhandenen Tests zu evaluieren. Die Durchführung von Mutation-Testing ist in der Theorie ziemlich einfach, das vorhandene, zu testende, Programm wird an wenigen Stellen verändert. Jede so neu entstandene Version dieses Programms nennt man Mutant. Jeder erstellte Mutant wird mit den vorhandenen Tests überprüft um zu verifizieren, dass sich die Test-Suite anders verhält und somit die Änderung an dem Programm bemerkt. Tritt dieser Fall ein, spricht man vom \dq{}killing the mutant\dq{}. Die existierende Test-Suite wird anhand der prozentualen Entdeckung von Mutanten bewertet. Desto höher dieser Wert ist, umso genauer sind die automatisierten Tests in der Überprüfung und Validierung der Software. 
 
-Um diesen Richtwert zu erhöhen, können neue Tests erstellt werden die genau so eine auftretende Mutation überprüfen. Mutationen basieren auf wohldefinierten Veränderungen wie zum Beispiel typische Programmierfehler (Verwendung des falschen Operator oder Variablennamen). Zweck dieser ganzen Veränderungen ist es dem Softwareentwickler zu unterstützen, bessere und effektivere Tests zu schreiben. Ein weiterer Aspekt ist die Identifizierung von schwächen in den verwendeten Testdaten oder selten genutzten Funktionen. Dies sind alles unterstützende Faktoren die dem Softwareentwickler helfen können, um bessere Software-Tests zu entwickeln.
+Um diesen Richtwert zu erhöhen, können neue Tests erstellt werden die genau so eine auftretende Mutation überprüfen. Mutationen basieren auf wohldefinierten Veränderungen wie zum Beispiel typische Programmierfehler (Verwendung des falschen Operator oder Variablennamen). Zweck dieser ganzen Veränderungen ist es dem Softwareentwickler zu unterstützen, bessere und effektivere Tests zu schreiben. Ein weiterer Aspekt ist die Identifizierung von Schwächen in den verwendeten Testdaten oder selten genutzten Funktionen. Dies sind alles unterstützende Faktoren die dem Softwareentwickler helfen können, um bessere Software-Tests zu entwickeln.
 
 Mutation-Testing gehört zu der Gruppe der White-Box Tests.
 
 \subsection{Testgetriebene Entwicklung}
 Wenn eine neue Funktionalität in einem Programm implementiert bzw. eine Funktionalität angepasst und erweitert werden soll, wie stellt man sicher, dass es im Nachhinein zu keinerlei Problemen kommt? Die Funktionalität per Hand zu testen ist aus mehreren Gründen nicht vorteilhaft.
 
-Die testgetriebene Entwicklung versucht dieses Problem zu beheben. Um dieses Ziel zu erreichen, wird zu Erst mit einem Test die Funktionalität spezifiziert. Nach der Fertigstellung des Tests wird der Programmcode entwickelt. Das führt dazu, dass nun die komplette Funktionalität überprüft werden kann. Wenn unerwünschte Seiteneffekte entstehen, die auf Grund einer Codeänderung an einer anderen Stelle auftreten, können sie nun durch die Tests herausgefunden und dadurch behoben werden.
+Die testgetriebene Entwicklung versucht dieses Problem zu beheben. Um dieses Ziel zu erreichen, wird zuerst mit einem Test die Funktionalität spezifiziert. Nach der Fertigstellung des Tests wird der Programmcode entwickelt. Das führt dazu, dass nun die komplette Funktionalität überprüft werden kann. Wenn unerwünschte Seiteneffekte entstehen, die auf Grund einer Codeänderung an einer anderen Stelle auftreten, können sie nun durch die Tests herausgefunden und dadurch behoben werden.
 
 %\subsection{Verhaltensgetriebene Entwicklung}
 % BDD wurde ursprünglich 2003 von Dan North als Weiterentwicklung von TDD bekannt gemacht. 6

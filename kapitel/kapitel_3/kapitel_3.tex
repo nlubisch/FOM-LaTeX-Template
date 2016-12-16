@@ -2,7 +2,7 @@
 \section{Umsetzung von Testautomatisierung}\label{umsetzung}
 
 \subsection{Strukturelle Voraussetzungen}
-Die Neuentwicklung soll die beschriebenen und etablierten Best-Practices berücksichtigen und umsetzen. Eine Konsequente Einhaltung zum Beispiel des Single Responsibility Principles führt zu einer einfachen und intuitiven Klassenstruktur da die jeweils erstellten Klassen einen eindeutigen Namen besitzen und nur eine Aufgabe erfüllen. Eine exemplarische Verzeichnis-und sogleich auch Namespacestruktur könnte somit wie folgt aussehen: 
+Die Neuentwicklung soll die beschriebenen und etablierten Best-Practices berücksichtigen und umsetzen. Eine konsequente Einhaltung zum Beispiel des Single Responsibility Principles führt zu einer einfachen und intuitiven Klassenstruktur,  da die jeweils erstellten Klassen einen eindeutigen Namen besitzen und nur eine Aufgabe erfüllen. Eine exemplarische Verzeichnis-und sogleich auch Namespace-Struktur könnte somit wie folgt aussehen: 
 
 \begin{itemize}
 	\item Commands
@@ -14,19 +14,19 @@ Die Neuentwicklung soll die beschriebenen und etablierten Best-Practices berück
 	\item Writer
 \end{itemize}
 
-Im Namespace Writer befinden sich alle Klassen die gewisse Datenströme in einem beliebigen Format abspeichern. Für jedes Datenformat gibt es jeweils eine eigenständige Klasse um dem Single Responsibility Principles gerecht zu werden. Zusätzlich müssen die ggf. vorhandenen Abhängigkeiten über einem geeigneten Verfahren auflösbar sein. Hier bietet sich an Abhängigkeiten via Dipendency Injection zu benennen und diese über dem constructor der jeweiligen Klasse zu übergeben, sogenannte constructor injection.
+Im Namespace Writer befinden sich alle Klassen die gewisse Datenströme in einem beliebigen Format abspeichern. Für jedes Datenformat gibt es jeweils eine eigenständige Klasse um dem Single Responsibility Principles gerecht zu werden. Zusätzlich müssen die ggf. vorhandenen Abhängigkeiten über einem geeigneten Verfahren auflösbar sein. Hier bietet sich an, Abhängigkeiten via Dependency Injection zu benennen und diese über den Konstruktor der jeweiligen Klasse zu übergeben, sogenannte Konstruktor Injektion.%NL: am besten darauf achten, dass einfache Worte wie Konstruktor nicht in Englisch geschrieben sind. Beim Lesen verwirrt das mMn. nur
 
 \subsection{Auswahl der Testwerkzeuge}
 \subsubsection{PHPUnit}
-Die Auswahl für die Durchführung und Erstellung der benötigten Unit- und Integrationstest viel auf das Framework PHPUnit. Dies ist in der PHP-Entwicklung der de facto Standard für diese Aufgaben geworden und wird Hauptsächlich von Sebastian Bergmann entwickelt. Zusätzlich gibt es nur ein Mutation Testing Framework für PHP-Projekte und dies baut auf dem PHPUnit Framework auf. PHPUnit wird ab der Version 3.0 unter der Berkeley Software Distribution (BSD)-Lizenz veröffentlicht und kann problemlos als PHP-Archive (phar) Paket heruntergeladen und installiert werden.
+Die Auswahl für die Durchführung und Erstellung der benötigten Unit- und Integrationstest fiel auf das Framework PHPUnit. Das Framework ist in der PHP-Entwicklung der de facto Standard für diese Aufgaben geworden und wird hauptsächlich von Sebastian Bergmann entwickelt. Zusätzlich gibt es nur ein Mutation Testing Framework für PHP-Projekte und dies baut auf dem PHPUnit Framework auf. PHPUnit wird ab der Version 3.0 unter der Berkeley Software Distribution (BSD)-Lizenz veröffentlicht und kann problemlos als PHP-Archive (phar) Paket heruntergeladen und installiert werden.
 
-Konzeptionell basiert es auf dem xUnit-Konzept, welches auch Anwendung in anderen Programmiersprachen findet (z.B. JUnit für Java). Zusätzlich wird das Framework Quelloffen auf 
+Konzeptionell basiert es auf dem xUnit-Konzept, welches auch Anwendung in anderen Programmiersprachen findet (z.B. JUnit für Java). Zusätzlich wird das Framework quelloffen auf %NL: Github angeboten. :D
 
 \subsubsection{Behat/Mink}
-Die Module Behat und Mink eignen sich hervorragend zum Testing von GUI-Oberflächen. Da in dem Projekt aber nur eine Schnittstelle zu testen ist und keine Benutzeroberflächen finden diese Module keine Anwendung. 
+Die Module Behat und Mink eignen sich hervorragend zum Testen von GUI-Oberflächen. Da in dem Projekt nur eine Schnittstelle zu testen ist welche keine Benutzeroberflächen besitzt, finden diese Module keine Anwendung. 
 
 \subsubsection{Humbug}
-Humbug ist das einzig existierende Mutationtesting Framework für die Anwendung in PHP-Projekten. Glücklicherweise unterstützt es Vorzugsweise PHPUnit und baut auf dessen Testergebnisse auf. Wie im Kapitel \ref*{mutation-testing} beschrieben, verändert Humbug die eingesetzte Software minimal und führt dann die vorhandenen Tests erneut aus. 
+Humbug ist das einzig existierende Mutationtesting Framework für die Anwendung in PHP-Projekten. Glücklicherweise unterstützt es vorzugsweise PHPUnit und baut auf dessen Testergebnisse auf. Wie im Kapitel \ref*{mutation-testing} beschrieben, verändert Humbug die eingesetzte Software minimal und führt dann die vorhandenen Tests erneut aus. 
 
 Aktuell unterstützt Humbug folgende Mutationsarten:
 \begin{table}[H]
@@ -86,7 +86,7 @@ Aktuell unterstützt Humbug folgende Mutationsarten:
 \begin{table}[H]
 	\caption{Increments}
 	\begin{tabular}{cc}
-		\textbf{Original} & \textbf{Verändert} \\
+		\textbf{Original} & \textbf{Verändert} \\%hier musst du aufpassen, dass "--" nicht durch "–" ersetzt wird
 		++ & -- \\
 		-- & ++ \\
 	\end{tabular}
@@ -133,16 +133,16 @@ Im Gegensatz zu der vorherigen Umsetzung, die den Prinzipien der prozeduralen Pr
 	\item Writer
 \end{itemize}
 
-In den verschiedenen Verzeichnissen befinden sich einzelne Klassen die für jeweils eine bestimmte Aufgabe konzipiert sind. Im Bereich Commands existiert zum Beispiel eine EtosExportOrders und eine EtosImportArticles Klasse. Die erste Klasse führt den Befehl aus, das die Bestellungen Exportiert und für die Warenwirtschaft bereitgestellt werden. Diese Klasse erfüllt ansonsten keine weitere Aufgabe außer der beschrieben.
+In den verschiedenen Verzeichnissen befinden sich einzelne Klassen die für jeweils eine bestimmte Aufgabe konzipiert sind. Im Bereich Commands existiert zum Beispiel eine EtosExportOrders und eine EtosImportArticles Klasse. Die erste Klasse führt den Befehl aus, dass Bestellungen exportiert und für die Warenwirtschaft bereitgestellt werden. Diese Klasse erfüllt ansonsten keine weitere Aufgabe außer der beschriebenen.
 
 \subsubsection{Unit-Tests}
-Für die Umsetzung von Unit-Tests werden exemplarisch die Config und Reader Klassen herangezogen. Um eine einfaches Austauschen der Klassen zwischen den einzelnen Komponenten zu ermöglichen sind die minimalen Schnittpunkte alle in Interfaces abgebildet. Das Interface für die Config Komponente sind wie folgt aus:
+Für die Umsetzung von Unit-Tests werden exemplarisch die Config und Reader Klassen herangezogen. Um eine einfaches Austauschen der Klassen zwischen den einzelnen Komponenten zu ermöglichen sind die minimalen Schnittpunkte alle in Interfaces abgebildet. Das Interface für die Config Komponente sieht wie folgt aus:
 
 \lstinputlisting[language=PHP]{./Quellcode/Config/ConfigInterface.php}
 
 Dieses Interface bildet nur die notwendigen Konfigurationswerte ab. Es existieren unterschiedliche Pfade für die Artikelbilder und den Artikeldaten im CSV Format. Zusätzlich wird die Variationsgruppe, in diesem Fall die Größe und die Standard SteuerId konfiguriert.
 
-Da sich die Werte in den Projekt nur in den seltenen Fällen ändern, war vom Kunden eine eigenständige Konfigurationsmöglichkeit nicht zwingend erforderlich. Dies ermöglichte eine feste Umsetzung der Konfiguration als ein fixes php array. Die erstellte Klasse wurde wie folgt umgesetzt:
+Da sich die Werte in dem Projekt nur in den seltensten Fällen ändern, war vom Kunden eine eigenständige Konfigurationsmöglichkeit nicht zwingend erforderlich. Dies ermöglichte eine feste Umsetzung der Konfiguration als ein fixes PHP Array. Die erstellte Klasse wurde wie folgt umgesetzt:
 
 \lstinputlisting[language=PHP]{./Quellcode/Config/ArrayConfig.php}
 
@@ -152,11 +152,11 @@ Wie aber sieht nun ein Unit-Test für die ArrayConfig Klasse aus? Dadurch das di
 
 \lstinputlisting[language=PHP]{./Quellcode/Config/ArrayConfigTest.php}
 
-In der setUp() Methode wird vor jeder test* Funktion die Klasse ArrayConfig instanziiert. Damit ist gewährleistet, dass kein einziger test einen Einfluss auf den darauf folgenden hat.
+In der setUp() Methode wird vor jeder test* Funktion die Klasse ArrayConfig instanziiert. Damit ist gewährleistet, dass kein einziger Test einen Einfluss auf den darauf Folgenden hat.
 
 In der Methode testImagePath() wird überprüft ob der Pfad der im setUp gesetzt wurde, identisch wieder aus der ArrayConfig Klasse zurückgegeben wird. Dies passiert mit dem Aufruf static::assertEquals();. Diese gleiche Vorgehensweise ist für alle Konfigurationsparameter umgesetzt und somit auf Funktionalität geprüft.
 
-Die Umsetzung der Reader Komponente ist schon komplexer. Die Reader Komponente soll für verschiedene Formate jeweils eine Klasse bereitstellen um auf etwaige Änderungen der Warenwirtschaft reagieren zu können. Das aktuelle Format ist CSV und ist somit auch nur umgesetzt worden. Das für die Reader Komponente benötigte Interface ist im Vergleich zu dem ConfigInterface ziemlich klein:
+Die Umsetzung der Reader Komponente ist schon komplexer. Die Reader Komponente soll für verschiedene Formate jeweils eine Klasse bereitstellen, um auf etwaige Änderungen der Warenwirtschaft reagieren zu können. Das aktuelle Format ist CSV und ist somit auch nur umgesetzt worden. Das für die Reader Komponente benötigte Interface ist im Vergleich zu dem ConfigInterface ziemlich klein:
 
 \lstinputlisting[language=PHP]{./Quellcode/Reader/ReaderInterface.php}
 
@@ -164,21 +164,21 @@ Wie man sehen kann hat das Interface nur eine Methode die eine Datei einlesen so
 
 \lstinputlisting[language=PHP]{./Quellcode/Reader/CsvReader.php}
 
-In den ersten Zeilen wird geprüft ob die zu lesende CSV-Datei überhaupt existiert. Anschließend wird diese im "Nur Lesen" Modus geöffnet und via fgetcsv die CSV-Kopfzeile eingelesen. Da die Warenwirtschaft die Daten in der Zeichenkodierung ISO-8859-1 übermittelt aber Shopware mit UFT-8 arbeitet, müssen die jeweiligen Strings mittels utf8\_encode umgewandelt werden.
+In den ersten Zeilen wird geprüft ob die zu lesende CSV-Datei überhaupt existiert. Anschließend wird diese im "Nur Lesen" Modus geöffnet und via fgetcsv wird die CSV-Kopfzeile eingelesen. Da die Warenwirtschaft die Daten in der Zeichenkodierung ISO-8859-1 übermittelt aber Shopware mit UTF-8 arbeitet, müssen die jeweiligen Strings mittels utf8\_encode umgewandelt werden.
 
-Anschließend werden die nach der Kopfzeile folgenden Daten in einem mehrdimensionales array gespeichert und für die weitere Verarbeitung zur Verfügung gestellt. Der dafür notwendige Unit-Test ist reine fleißarbeit: 
+Anschließend werden die nach der Kopfzeile folgenden Daten in einem mehrdimensionalen Array gespeichert und für die weitere Verarbeitung zur Verfügung gestellt. Der dafür notwendige Unit-Test ist reine Fleißarbeit: 
 
 \lstinputlisting[language=PHP]{./Quellcode/Reader/CsvReaderTest.php}
 
-Da nur eine Testmethode umgesetzt ist, findet die Initialisierung der CsvReader Klasse direkt in der Testmethode statt. Sollten noch weitere Methoden hinzukommen, muss eine Refaktorierung und Initialisierung in der setUp Methode stattfinden.
+Da nur eine Testmethode umgesetzt ist, findet die Initialisierung der CsvReader-Klasse direkt in der Testmethode statt. Sollten noch weitere Methoden hinzukommen, muss eine Refaktorierung und Initialisierung in der setUp Methode stattfinden.
 
-Um nicht CSV-Daten zu testen die vom Live Shop genutzt oder zu groß sind, wurden in einem fixtures Verzeichnis kleinere Testdateien erstellt und abgespeichert. Es macht für die Ausführungsdauer eines Tests einen großen Unterschied ob der Test nur ein paar Artikel oder mehrere 1.000 Stück verarbeiten muss. 
+Um nicht CSV-Daten zu testen die vom Live Shop genutzt werden oder zu groß sind, wurden in einem Fixtures-Verzeichnis kleinere Testdateien erstellt und abgespeichert. Es macht für die Ausführungsdauer eines Tests einen großen Unterschied ob der Test nur ein paar Artikel oder mehrere 1.000 Stück verarbeiten muss. 
 
-Anschließend findet eine Überprüfung des erstellten arrays statt, ob wirklich alle CSV-Kopfzeilen sich im array wiederfinden.
+Anschließend findet eine Überprüfung des erstellten Arrays statt, ob wirklich alle CSV-Kopfzeilen sich im Array wiederfinden.
 
 \subsubsection{Integration}
 
-Als Beispiel für einen Integrationstest dient das Importer Modul. Dies beinhaltet alle Import spezifischen Klassen wie z.B. die ArtileImporter Klasse. Diese Klasse ist nur für den Import der Artikel ins Shopsystem zuständig. Auch hier verwenden wir wieder ein aufs notwendig reduziertes Interface:
+Als Beispiel für einen Integrationstest dient das Importer Modul. Dies beinhaltet alle Import spezifischen Klassen wie z.B. die ArticleImporter-Klasse. Diese Klasse ist nur für den Import der Artikel ins Shopsystem zuständig. Auch hier verwenden wir wieder ein auf das notwendig reduzierte Interface:
 
 \lstinputlisting[language=PHP,basicstyle=\tiny]{./Quellcode/Importer/ArticleImporterInterface.php}
 
@@ -188,9 +188,9 @@ Als Beispiel für einen Integrationstest dient das Importer Modul. Dies beinhalt
 \lstinputlisting[language=PHP,basicstyle=\tiny]{./Quellcode/Importer/ArticleImporterTest.php}
 
 \subsubsection{Mutation-Testing}
-Wie im Kapitel \ref*{mutation-testing} schon beschrieben setzt das Mutation-Testing auf in den vorherigen Kapitel geschrieben Tests auf. Hierbei wird versucht durch gezielte Manipulationen des eigentlichen Quelltextes die definierten Test zum scheitern zu bringen.
+Wie im Kapitel \ref*{mutation-testing} schon beschrieben setzt das Mutation-Testing auf in den vorherigen Kapitel geschriebenen Tests auf. Hierbei wird versucht durch gezielte Manipulation des eigentlichen Quelltextes die definierten Tests zum Scheitern zu bringen.
 
-Tritt dieser Fall ist der geschriebenen Tests eng mit dem zu überprüfenden Quellcode verwoben und bietet eine hohe Testgenauigkeit. Die Ausführung des Mutation-Testing generiert folgende Ausgabe:
+Tritt dieser Fall ein, ist der geschriebenen Tests eng mit dem zu überprüfenden Quellcode verwoben und bietet eine hohe Testgenauigkeit. Die Ausführung des Mutation-Testing generiert folgende Ausgabe:
 
 
 \begin{lstlisting}[
@@ -230,9 +230,9 @@ Mutation Code Coverage: 38%
 Covered Code MSI: 44%
 \end{lstlisting}
 
-Zu erst wird die vorhandene Testsuite einmalig ausgeführt um eine Basis für die zu erstellenden Mutationen zu erhalten. Im aktuellen Status der Schnittstelle wird nur eine Coverage von 71.16\% erreicht, dies soll kurz und mittelfristig noch auf die angestrebten 100 \% erweitert werden.
+Zu erst wird die vorhandene Testsuite einmalig ausgeführt, um eine Basis für die zu erstellenden Mutationen zu erhalten. Im aktuellen Status der Schnittstelle wird nur eine Coverage von 71.16\% erreicht, dies soll kurz und mittelfristig noch auf die angestrebten 100\% erweitert werden.
 
-Danach analysiert Humbug die Quellcode Dateien und generiert Mutanten aus 22 unterschiedlichen Dateien und lässt diese gegen die vorhandenen Tests prüfen. Es wurden 367 Mutanten generiert und getestet. Die Entdeckungsquote lag bei ~ 17 \%. Dies bietet genau wie die erreichte Code-Coverage noch deutlich Platz für Verbesserungen.
+Danach analysiert Humbug die Quellcode Dateien und generiert Mutanten aus 22 unterschiedlichen Dateien und lässt diese gegen die vorhandenen Tests prüfen. Es wurden 367 Mutanten generiert und getestet. Die Entdeckungsquote lag bei ~ 17\%. Das bietet, genau wie die erreichte Code-Coverage, noch deutlich Platz für Verbesserungen.
 
 
 
